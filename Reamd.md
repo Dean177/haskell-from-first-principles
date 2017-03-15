@@ -1,3 +1,3 @@
 # Haskell from first principles
 
-My workings while following along and attempts at the exercises
+Nothing much to see here. This is just me following along with the book and my attempts at the exersizes
