@@ -28,7 +28,7 @@ instance Arbitrary a => Arbitrary (Identity a) where
 data Two a b = Two a b deriving (Eq, Show)
 
 instance Semigroup (Two a b) where
-  (Two x _) <> (Two _ y) = (Two x y)
+  (Two x _) <> (Two _ y) = Two x y
 
 twoGen :: (Arbitrary a, Arbitrary b) => Gen (Two a b)
 twoGen = do
@@ -48,8 +48,8 @@ instance Semigroup BoolConj where
 
 instance Arbitrary BoolConj where
   arbitrary = do
-    x <- (arbitrary :: Gen Bool)
-    return (BoolConj x)
+    x <- arbitrary :: Gen Bool
+    return $ BoolConj x
 
 
 newtype Combine a b = Combine { unCombine :: a -> b }
@@ -78,5 +78,3 @@ instance (CoArbitrary a, Arbitrary a) => Arbitrary (Comp a) where
   arbitrary = do
     f <- arbitrary
     return $ Comp f
-
-

@@ -1,7 +1,7 @@
 stops = "pbtdkg"
 vowels = "aeiou"
 
-sts = [(x:(y:(z:[]))) | x <- stops, y <- vowels, z <- stops, x == 'p']
+sts = [[x, y, z] | x <- stops, y <- vowels, z <- stops, x == 'p']
 
 nouns = ["duck", "table", "zebra"]
 verbs = ["asks", "smells", "wants"]

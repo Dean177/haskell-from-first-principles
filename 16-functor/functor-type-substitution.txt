@@ -1,0 +1,24 @@
+(.) :: (b -> c) -> (a -> b) -> a -> c
+
+fmap :: Functor f => (m -> n) -> f m -> f n
+
+with
+  b -> c = (m -> n) -> f m -> f n
+  b = m -> n
+  c = f m -> f n
+
+(a -> b) -> a -> c
+becomes
+Functor f => (a -> m -> n) -> a -> f m -> f n
+
+fmap :: Functor g => (x -> y) -> g x -> g y
+
+with
+  (a -> m -> n) = (x -> y) -> g x -> g y
+  a = x -> y
+  m = g x
+  n = g y
+
+Functor f => (a -> (m -> n)) -> a -> f m -> f n
+becomes
+Functor f, Functor g => (x -> y) -> f g x -> f g y
