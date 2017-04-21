@@ -89,7 +89,7 @@ instance Functor g => Functor (Notorious g o a) where
 data List a = Nil | Cons a (List a)
 instance Functor List where
   fmap _ Nil = Nil
-  fmap f (Cons x xs) = Cons (f x) (fmap f xs)¡
+  fmap f (Cons x xs) = Cons (f x) (fmap f xs)
 
 -- 10.
 data GoatLord a = NoGoat | OneGoat a | MoreGoats (GoatLord a) (GoatLord a) (GoatLord a)
