@@ -9,17 +9,17 @@ import List
 
 main :: IO ()
 main = do
---   quickBatch $ applicative (undefined :: Sum Char (Int, Int, Int))
---   quickBatch $ functor (undefined :: Sum Char (Int, Int, Int))
---   quickBatch $ monad (undefined :: Sum Char (Int, Int, Int))
+  quickBatch $ applicative (undefined :: Sum Char (Int, Int, Int))
+  quickBatch $ functor (undefined :: Sum Char (Int, Int, Int))
+  quickBatch $ monad (undefined :: Sum Char (Int, Int, Int))
 
---   quickBatch $ applicative (undefined :: Nope (Int, Int, Int))
---   quickBatch $ functor (undefined :: Nope (Int, Int, Int))
---   quickBatch $ monad (undefined :: Nope (Int, Int, Int))
+  quickBatch $ applicative (undefined :: Nope (Int, Int, Int))
+  quickBatch $ functor (undefined :: Nope (Int, Int, Int))
+  quickBatch $ monad (undefined :: Nope (Int, Int, Int))
 
---   quickBatch $ applicative (undefined :: PhhhbbtttEither Char (Int, Int, Int))
---   quickBatch $ functor (undefined :: PhhhbbtttEither Char (Int, Int, Int))
---   quickBatch $ monad (undefined :: PhhhbbtttEither Char (Int, Int, Int))
+  quickBatch $ applicative (undefined :: PhhhbbtttEither Char (Int, Int, Int))
+  quickBatch $ functor (undefined :: PhhhbbtttEither Char (Int, Int, Int))
+  quickBatch $ monad (undefined :: PhhhbbtttEither Char (Int, Int, Int))
 
   quickBatch $ applicative (undefined :: List (Int, Int, Int))
   quickBatch $ functor (undefined :: List (Int, Int, Int))

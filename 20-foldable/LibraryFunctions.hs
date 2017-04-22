@@ -11,7 +11,7 @@ product =  getProduct . foldMap Product
 elem :: (Foldable t, Eq a) => a -> t a -> Bool
 elem x = getAny . foldMap (Any . (== x))
 
--- Data.Monoid.Ord had something similar but with a Bounded constraint,
+-- Data.Monoid.Ord had something similar but with a Bounded constraint.
 -- Was I supposed to do this or is there a simpler way?
 newtype Min a = Min { getMin :: Maybe a } deriving (Eq, Show)
 instance Ord a => Monoid (Min a) where

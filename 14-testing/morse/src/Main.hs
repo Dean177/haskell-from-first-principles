@@ -6,21 +6,21 @@ import Data.Traversable (traverse)
 import Morse (stringToMorse, morseToChar)
 import System.Environment (getArgs)
 import System.Exit (exitFailure, exitSuccess)
-import System.IO (hGetLine, hIsEOF, stdin)
+import System.IO (hIsEOF, stdin)
 
 convertToMorse :: IO ()
 convertToMorse = forever $ do
   weAreDone <- hIsEOF stdin
   when weAreDone exitSuccess
 
-  line <- hGetLine stdin
+  line <- getLine
   convertLine line
 
   where
     convertLine line = do
       let morse = stringToMorse line
       case morse of
-        (Just str) -> putStrLn (intercalate " " str)
+        Just str -> putStrLn $ unwords str
         Nothing -> do
           putStrLn $ "Error: " ++ line
           exitFailure
@@ -29,7 +29,7 @@ convertFromMorse :: IO ()
 convertFromMorse = forever $ do
   weAreDone <- hIsEOF stdin
   when weAreDone exitSuccess
-  line <- hGetLine stdin
+  line <- getLine
   convertLine line
   where
     convertLine line = do
