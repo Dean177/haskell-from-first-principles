@@ -1,6 +1,6 @@
-name:                HttpRequests
+name:                Instances
 version:             0.1.0.0
-homepage:            https://github.com/Dean177/HttpRequests#readme
+homepage:            https://github.com/Dean177/Instances#readme
 author:              Dean Merchant
 maintainer:          deanmerchant@gmail.com
 copyright:           2017 Dean Merchant
@@ -8,31 +8,23 @@ category:            Web
 build-type:          Simple
 cabal-version:       >=1.10
 
-library
-  hs-source-dirs:      src
-  exposed-modules:     Lib
-  build-depends:       base >= 4.7 && < 5
-  default-language:    Haskell2010
-
-executable HttpRequests-exe
+executable Instances-exe
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
-                     , bytestring
-                     , HttpRequests
-                     , wreq
   default-language:    Haskell2010
 
-test-suite HttpRequests-test
+test-suite Instances-test
   type:                exitcode-stdio-1.0
-  hs-source-dirs:      test
+  hs-source-dirs:      .
   main-is:             Spec.hs
   build-depends:       base
-                     , HttpRequests
+                     , QuickCheck
+                     , checkers
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
 source-repository head
   type:     git
-  location: https://github.com/Dean177/HttpRequests
+  location: https://github.com/Dean177/Instances
